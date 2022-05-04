@@ -8,9 +8,9 @@ const personalMovieDB = {
     private: false
 };
 
-const a = prompt('Which movie hav you watched last?'),
+const a = prompt('Which movie have you watched last?'),
       b = prompt('How can you rate it?'),
-      c = prompt('Which movie hav you watched last?'),
+      c = prompt('Which movie have you watched last?'),
       d = prompt('How can you rate it?');
 
 personalMovieDB.movies[a] = b;
