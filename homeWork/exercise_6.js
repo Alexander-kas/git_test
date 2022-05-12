@@ -13,35 +13,23 @@ return `Volume is ${volume}, Area is ${area}`;
 
 calculateVolumeAndArea(5);
 
-function getCoupeNumber (coupe){
-    if (typeof(coupe) !== 'number' ||  !Number.isInteger(coupe)){
-        return 'There is a wrong number, please type again';}
-    for (let i = 1; coupe <= 36; i++){
-    if (i <= 4){
-        console.log('Your coupe is number 1');
-    } else if (i <= 8){
-        console.log('Your coupe is number 2');
-    }else if (i <= 12){
-        console.log('Your coupe is number 3');
-    }else if (i <= 16){
-        console.log('Your coupe is number 4');
-    }else if (i <= 20){
-        console.log('Your coupe is number 5');
-    }else if (i <= 24){
-        console.log('Your coupe is number 6');
-    }else if (i <= 28){
-        console.log('Your coupe is number 7');
-    }else if (i <= 32){
-        console.log('Your coupe is number 8');
-    }else if (i <= 36){
-        console.log('Your coupe is number 9');
-    }else {
-        return `There is no coupe under that number`;
+// I could not solve that task -- I copyied teacher code and adjsted it
+function getCoupeNumber(coupe) {
+    if (typeof(coupe) !== 'number' || coupe < 0 || !Number.isInteger(coupe)) {
+        return "There is a wrong number, please type again";
     }
 
+    if (coupe === 0 || coupe > 36) {
+        return "We do not have a coupe for with that number";
     }
+
+    for (let i = 4; i <= 36; i = i + 4) {
+        if (coupe <= i) {
+            return `Your coupe is ${Math.ceil(i / 4)}`;
+        }
+    }
+    // тут очень много вариантов решения, но выбрал один из элегантных :)
 }
 
-getCoupeNumber(15);
-
+getCoupeNumber(-3);
 
